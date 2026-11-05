@@ -122,7 +122,7 @@ It is **not** made for professional compliance officers or for official certific
 | 2 | NIST Generative AI Profile, NIST AI 600-1 | Extra risks for projects that use LLMs and generative AI | https://doi.org/10.6028/NIST.AI.600-1 |
 | 3 | Malaysia National Guidelines on AI Governance and Ethics (AIGE) | Local guidance that matches where I study | https://mastic.mosti.gov.my/publication/the-national-guidelines-on-ai-governance-ethics/ |
 | 4 | ASEAN Guide on AI Governance and Ethics | Regional guidance with principles and a risk assessment template | https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_201223_v2.pdf |
-| 5 (optional) | UNESCO Guidance for Generative AI in Education and Research | Extra background on privacy and generative AI in education | https://unesdoc.unesco.org/ark:/48223/pf0000386693 |
+| 5  | UNESCO Guidance for Generative AI in Education and Research | Extra background on privacy and generative AI in education | https://unesdoc.unesco.org/ark:/48223/pf0000386693 |
 
 For each document I will record the title, publisher, year and version, and the link.
 
