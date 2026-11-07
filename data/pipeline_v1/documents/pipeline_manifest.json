@@ -1,0 +1,46 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-07T17:46:32.249684+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "chunk_size": 500,
+    "method": "page-aware",
+    "header_min_pages": 10
+  },
+  "processing_method": "page-aware text chunks of 500 characters; removed repeated page header; joined wrapped lines (hyphens kept); page = PDF page number",
+  "sources": [
+    {
+      "path": "/content/week3_project/data/raw/nist_ai_100-1_ai_rmf_1.0.pdf",
+      "sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+    }
+  ],
+  "outputs": [
+    "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source": "/content/week3_project/data/raw/nist_ai_100-1_ai_rmf_1.0.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl"
+    }
+  ],
+  "inspection": {
+    "source": "nist_ai_100-1_ai_rmf_1.0.pdf",
+    "characters": 106493,
+    "pages": 48,
+    "near_empty_pages": [],
+    "repeated_headers": [
+      "NIST AI 100-1 AI RMF 1.0"
+    ]
+  },
+  "validation": {
+    "output_count": 1,
+    "output_sha256": [
+      "f0d0cfe592dc0722ff3082d5627d5706731541a2b6ac6ad70c3288e46fc01d34"
+    ],
+    "output_bytes": [
+      187924
+    ]
+  },
+  "source_version": "Not verified",
+  "access_rights": "Not verified — check before sharing"
+}

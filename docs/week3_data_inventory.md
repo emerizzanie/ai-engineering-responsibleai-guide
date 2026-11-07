@@ -4,8 +4,6 @@ This is real project data, not the synthetic practice dataset. All sources are p
 
 The numbers below come from my Colab inspection cell (Cell A3) using `pypdf`. A page counts as "near-empty" if it has fewer than 50 characters of extracted text.
 
-> Items marked **TODO** will be filled in after I run one more check cell in Colab.
-
 ---
 
 ## A1: From Requirements to Data Needs
@@ -44,9 +42,11 @@ The numbers below come from my Colab inspection cell (Cell A3) using `pypdf`. A 
 - **Near-empty pages:** S04 (ASEAN) has 9 pages with fewer than 50 extracted characters, while S03 (Malaysia AIGE) has 5. Most identified ASEAN pages contain short headings or section titles. For Malaysia, some pages contain no text, while others contain only page numbers. These pages should be checked visually if their content is needed later.
 
 - **Formatting issues:** Repeated headers, page numbers, line-end hyphens and ligature characters appear in some extracted text. These may affect text search and retrieval if they are not handled during preparation.
+  - S01 (NIST AI RMF 1.0): the header "NIST AI 100-1 AI RMF 1.0" appears at the top of 43 of 48 pages, and there are 235 line-end hyphens and 0 ligatures.
+  - S02 (NIST AI 600-1): 402 ligature characters were found (for example "ﬀ" in "aﬀected"). They are not handled in V1 because S02 is not in this run.
 
 - **Page references:** The basic chunking code in the lab uses `"page": None`, which does not preserve the original PDF page number. This is a limitation because FR3 and RAI1 require source references. The preparation process should preserve document identity and page information for future citations.
 
 - **Document structure:** S03 (Malaysia AIGE) contains different sections for different audiences, including policymakers. Section information should be preserved during text preparation to avoid mixing guidance intended for different audiences.
 
-- **Main document selection:** S01 (NIST AI RMF 1.0) is selected as the proposed main document for the initial pipeline because it has readable extracted text, no near-empty pages and fewer pages than the other selected documents. This decision will be reviewed during Part B..
+- **Main document selection:** S01 (NIST AI RMF 1.0) is selected as the proposed main document for the initial pipeline because it has readable extracted text, no near-empty pages and fewer pages than the other selected documents. This decision will be reviewed during Part B. Part B confirmed it, and it is the source used in the Part C pipeline.

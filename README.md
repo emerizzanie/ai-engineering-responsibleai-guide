@@ -4,7 +4,7 @@
 
 ResponsibleAI Guide is my semester project for AI Engineering. A student describes their AI project and the system looks through public responsible AI guidelines. Which is to explain possible risks, show where the information came from and give a simple checklist to think about.
 
-> This project is still at the planning stage (Week 1/2). Nothing is built yet, and this README will be updated later on.
+> **Current status (Week 3):** The requirements, evaluation plan and first architecture are done. A first data pipeline now turns one guideline PDF into text pieces with page numbers. The assistant itself (search, answers, checklist) is not built yet.
 
 ---
 
@@ -79,7 +79,9 @@ It is not made for professional compliance work.
 4. [ASEAN Guide on AI Governance and Ethics](https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_201223_v2.pdf)
 5. [UNESCO Guidance for Generative AI in Education and Research](https://unesdoc.unesco.org/ark:/48223/pf0000386693)
 
-I will record the version and date of each document and check the terms of use before adding any file to this repo.
+I record the version and date of each document and check the terms of use before adding any file to this repo. The PDFs are kept in Google Drive and copied into Colab each session. I do not commit the raw PDFs. The Malaysia AIGE PDF has a copyright notice, so it is link only.
+
+In Week 3, **NIST AI 100-1** is the main document used to test the pipeline. The other PDFs will be added later with the same steps. Details are in `docs/week3_data_inventory.md`.
 
 ---
 
@@ -94,13 +96,79 @@ The exact libraries and LLM will be chosen later based on cost and availability.
 
 ---
 
+## What I Have Done So Far
+
+### Week 2: Requirements and Architecture
+- Wrote the requirements (FR, NFR and Responsible AI requirements) and how each one will be tested: `docs/week2_requirements.md`, `docs/week2_evaluation_criteria.md`
+- Drew the first architecture and recorded four design decisions: `docs/week2_architecture_decisions.md`
+- Listed the data sources and links: `data/data_sources.md`
+
+### Week 3: First Data Pipeline
+The pipeline takes a guideline PDF and prepares it for search later:
+
+**Source PDF → Ingest → Inspect → Prepare → Validate → Record lineage**
+
+| Step | What happens |
+|---|---|
+| Ingest | Pick the exact PDF from `data/raw` |
+| Inspect | Count pages and characters, find near-empty pages and the repeated page header |
+| Prepare | Split the text into pieces of about 500 characters, one page at a time, and keep the PDF page number |
+| Validate | Check the output file exists, is not empty and every piece has text and a page number |
+| Record lineage | Save which PDF made which output, with SHA-256 fingerprints, in a manifest file |
+
+**Main results (NIST AI 100-1, 48 pages):**
+- I compared three ways of splitting the text. Fixed-size gave 213 pieces, paragraph-aware gave 214, and page-aware gave 238.
+- I chose **page-aware** because the lab's basic splitter does not keep page numbers (`"page": None`), and my project needs page numbers for source references (FR3 / RAI1).
+- The repeated header "NIST AI 100-1 AI RMF 1.0" is removed, and wrapped lines are joined. Line-end hyphens are kept, so words like "red-teaming" stay correct.
+- The pipeline is run twice to check that the sources, outputs and mappings stay the same (Cell 9 in the notebook).
+
+**Main limitations:**
+- Only one document (NIST AI 100-1) is processed so far.
+- Citations only have the PDF page number, no section title yet.
+- The checks only show the files exist and match their fingerprints. They do not prove the data quality. That comes in Topic 4.
+
+Full details: `docs/week3_pipeline_decisions.md` and `docs/week3_pipeline_diagram.png`.
+
+---
+
+## Repository Structure
+
+```
+notebooks/
+  week3_pipeline.ipynb          Colab notebook for the data pipeline
+docs/
+  week1_project_scope.md
+  week2_requirements.md
+  week2_evaluation_criteria.md
+  week2_architecture_decisions.md
+  week3_data_inventory.md
+  week3_pipeline_diagram.png
+  week3_pipeline_decisions.md
+data/
+  data_sources.md               links to the documents
+  week3_manifest.json           Part B: source-to-output record
+  processed/                    Part B prepared text
+  pipeline_v1/documents/        Part C prepared text and run manifest
+README.md
+```
+
+## How to Run the Week 3 Pipeline
+
+1. Put the five PDFs in a Google Drive folder.
+2. Open `notebooks/week3_pipeline.ipynb` in Google Colab.
+3. Run the cells from top to bottom (Cell 1 to Cell 9). Cell 2 copies the PDFs from Drive, so change the folder path to your own.
+4. The outputs appear in `week3_project/data/` in Colab. Download them before the session ends, because Colab files are temporary.
+
+---
+
 ## Weekly Progress
 
 | Week | What I did / plan | Output | Status |
 |------|-------------------|--------|--------|
-| Week 1 | Chose the topic, wrote the project scope, set up the repo | README, project scope, observation sheet, system map | In progress |
-| Week 2 | Requirements and system design | Requirements list and first architecture | Planned |
-| Week 3 onwards | Build, test and evaluate | Code, experiments and results | Planned |
+| Week 1 | Chose the topic, wrote the project scope, set up the repo | README, project scope | Done |
+| Week 2 | Requirements and system design | Requirements, evaluation criteria, architecture, decisions | Done |
+| Week 3 | Data sources and first data pipeline (PDF) | Data inventory, notebook, prepared text, manifests, diagram, decisions | Done |
+| Week 4 onwards | Data quality, retrieval, build, test and evaluate | Code, experiments and results | Planned |
 
 This plan is rough and will be updated each week.
 
