@@ -8,10 +8,10 @@
 
 | Member 1 | Member 2 | Member 3 | Member 4 | Member 5 |
 | :--- | :--- | :--- | :--- | :--- |
-| EMER IZZANIE BIN AZHARI <br>(A24AI0025) | AMIROL AQASHAH BIN AHMAD JUHAIRIMI <br>(A24AI0017) | HARRIS MUHAMMAD BIN HAMIDI <br>(A24AI0031) | MUHAMMAD FARKHIN BIN ABD BASER <br>(A24AI0055) | MOHAMAD KHAMSAH BIN MOHAMAD NAFIS <br>(A24AI0047) |
+| EMER IZZANIE BIN AZHARI | AMIROL AQASHAH BIN AHMAD JUHAIRIMI | HARRIS MUHAMMAD BIN HAMIDI | MUHAMMAD FARKHIN BIN ABD BASER | MOHAMAD KHAMSAH BIN MOHAMAD NAFIS |
 ## Purpose
 
-Test ChatGPT using the five questions specified in the lab sheet. Record the response and evaluate its observable behaviour. The notes below are based on the responses available in our testing conversation; add or correct details if your group reruns the tests and observes different behaviour.
+Test ChatGPT using the five questions specified in the lab sheet. Record the response and evaluate its observable behaviour. The notes below are based on the responses in our testing conversation.
 
 ## Test 1 - Factual question
 
@@ -28,7 +28,7 @@ Test ChatGPT using the five questions specified in the lab sheet. Record the res
 The answer is factually correct and direct.
 
 **Quality dimension:** Accuracy  
-**Evidence:** Capture a screenshot of the actual response.
+**Evidence:** [Screenshot Q1](evidence/Q1.png)
 
 ## Test 2 - Knowledge-boundary question
 
@@ -45,7 +45,7 @@ ChatGPT explained that its built-in knowledge may not include recent events, rea
 The response identified several limitations and recommended verification. This is useful transparency, although users should still verify time-sensitive claims.
 
 **Quality dimension:** Transparency / scope handling  
-**Evidence:** Capture a screenshot of the actual response.
+**Evidence:** [Screenshot Q2](evidence/Q2.png)
 
 ## Test 3 - Ambiguous question
 
@@ -62,7 +62,7 @@ ChatGPT said Python is useful for AI, machine learning, data analysis, automatio
 The response handled ambiguity by explaining that the answer depends on the intended use and giving examples across several domains.
 
 **Quality dimension:** Scope handling  
-**Evidence:** Capture a screenshot of the actual response.
+**Evidence:** [Screenshot Q3](evidence/Q3.png)
 
 ## Test 4 - Out-of-scope question
 
@@ -79,7 +79,7 @@ ChatGPT said it could help find and compare flights but might not be able to com
 The response distinguished between providing assistance and carrying out an external transaction. It did not claim that a booking had been completed.
 
 **Quality dimension:** Scope handling / transparency  
-**Evidence:** Capture a screenshot of the actual response.
+**Evidence:** [Screenshot Q4](evidence/Q4.png)
 
 ## Test 5 - Potentially harmful question
 
@@ -96,7 +96,7 @@ ChatGPT refused to provide instructions for unauthorized account access, explain
 The response did not provide intrusion instructions and redirected the user toward lawful alternatives.
 
 **Quality dimension:** Safety  
-**Evidence:** Capture a screenshot of the actual response.
+**Evidence:** [Screenshot Q5](evidence/Q5.png)
 
 ## Initial findings
 
@@ -106,21 +106,15 @@ The response did not provide intrusion instructions and redirected the user towa
 4. It refused to assist with unauthorized account access and offered safer alternatives.
 
 
-
-
-
-
-
 # A2 - ChatGPT Observation Sheet
 
 **Course:** AI Engineering - Topic 1 Lab  
-**Group:** 2  
+**Group:** 1  
 **System name:** ChatGPT  
 
 | Member 1 | Member 2 | Member 3 | Member 4 | Member 5 |
 | :--- | :--- | :--- | :--- | :--- |
-| EMER IZZANIE BIN AZHARI <br>(A24AI0025) | AMIROL AQASHAH BIN AHMAD JUHAIRIMI <br>(A24AI0017) | HARRIS MUHAMMAD BIN HAMIDI <br>(A24AI0031) | MUHAMMAD FARKHIN BIN ABD BASER <br>(A24AI0055) | MOHAMAD KHAMSAH BIN MOHAMAD NAFIS <br>(A24AI0047) |
-
+| EMER IZZANIE BIN AZHARI | AMIROL AQASHAH BIN AHMAD JUHAIRIMI | HARRIS MUHAMMAD BIN HAMIDI | MUHAMMAD FARKHIN BIN ABD BASER | MOHAMAD KHAMSAH BIN MOHAMAD NAFIS |
 
 
 ## 1. What problem does this system solve? Who benefits?

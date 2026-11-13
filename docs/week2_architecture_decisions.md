@@ -1,8 +1,10 @@
-# Architecture Decisions: ResponsibleAI Guide
+# Week 2: Architecture Decisions (ResponsibleAI Guide)
+
+[Back to README](../README.md) | Same week: [requirements](week2_requirements.md), [evaluation criteria](week2_evaluation_criteria.md)
 
 Version: 1.0
 
-This file explains why the V1 architecture (`week2_architecture_v1.png`) looks the way it does. V1 is a **conceptual** design. I label parts by what they do, not by specific tools. The tools (models, libraries, vector index, etc.) will be chosen in later weeks.
+This file explains why the V1 architecture ([`week2_architecture_v1.png`](week2_architecture_v1.png)) looks the way it does. V1 is a **conceptual** design. I label parts by what they do, not by specific tools. The tools (models, libraries, vector index, etc.) will be chosen in later weeks.
 
 ---
 

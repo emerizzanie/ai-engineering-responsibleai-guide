@@ -1,0 +1,5 @@
+record_id,page,length,text,rule_1_pass,rule_2_pass
+nist_ai_100-1_ai_rmf_1.0-0052,12,6,Page 7,True,False
+nist_ai_100-1_ai_rmf_1.0-0066,14,6,Page 9,True,False
+nist_ai_100-1_ai_rmf_1.0-0151,31,55,Categories Subcategories Continued on next page Page 26,True,False
+nist_ai_100-1_ai_rmf_1.0-0237,47,22,in particular. Page 42,True,False

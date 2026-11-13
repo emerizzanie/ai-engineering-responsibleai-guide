@@ -1,4 +1,6 @@
-# Week 1 Project Scope: ResponsibleAI Guide
+# Week 1: Project Scope (ResponsibleAI Guide)
+
+[Back to README](../README.md) | Next: [Week 2 requirements](week2_requirements.md)
 
 ## 1. Project Name and Domain
 
@@ -166,7 +168,7 @@ Students might type private details into the system, and the text may be sent to
 
 ---
 
-## Project Boundary
+## 11. Project Boundary
 
 For the first version, ResponsibleAI Guide will only cover a small set of public documents, retrieval, LLM answers with sources, a simple checklist, and basic testing.
 

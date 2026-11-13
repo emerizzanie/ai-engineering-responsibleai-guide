@@ -1,11 +1,12 @@
-# Requirements Specification: ResponsibleAI Guide
+# Week 2: Requirements Specification (ResponsibleAI Guide)
 
+[Back to README](../README.md) | Same week: [evaluation criteria](week2_evaluation_criteria.md), [architecture decisions](week2_architecture_decisions.md)
 
 ## Section 0: Project Framing and Application Scope Checkpoint
 
 | Element | Details |
 |---|---|
-| **Problem Evidence** | Responsible AI guidelines often have little effect in real practice, partly because the principles are too abstract (review in *AI & Society*: https://link.springer.com/article/10.1007/s00146-024-01880-9). Practitioner also give less attention to some principles, like transparency and accountability (Leça et al., 2024: https://arxiv.org/abs/2412.07620). These studies are about practitioners, not students, so I treat them as supporting evidence only |
+| **Problem Evidence** | Responsible AI guidelines often have little effect in real practice, partly because the principles are too abstract (review in *AI & Society*: https://link.springer.com/article/10.1007/s00146-024-01880-9). Practitioners also give less attention to some principles, like transparency and accountability (Leça et al., 2024: https://arxiv.org/abs/2412.07620). These studies are about practitioners, not students, so I treat them as supporting evidence only |
 | **Existing Approaches** | 1) **NIST AI RMF 1.0**: General framework for managing AI risks. 2) **Malaysia AIGE (2024)**: National guidelines with seven AI principles. 3) **"Let's have a chat with the EU AI Act" (2025)**: RAG chatbot for checking systems against the EU AI Act. 4) **gov-rag**: an open-source RAG system for questions about NIST AI RMF and the EU AI Act. 5) **AI Governance & Compliance Assistant**: Open-source tool that classifies a described AI use case under EU AI Act risk levels. |
 | **Project / Engineering Gap** | The guidelines are long and general and the similar tools I found mostly focus on EU or US documents and on compliance. I did not find one made for students that also uses Malaysian and ASEAN guidance and turns a project description into a checklist. This is a practical gap, not a claim that nothing similar exists. |
 | **Objective O1** | To collect and organise public responsible AI documents (NIST, Malaysia, ASEAN) for use in a RAG assistant. |
@@ -25,9 +26,9 @@
 
 |  | Requirement: The system SHALL | Scope Boundary: SHALL NOT (where relevant) |
 |---|---|---|
-| **FR1** | Accept a project description written in normal language and identify the responsible AI risk areas ( privacy, fairness, transparency) that are relevant to it, based on the approved documents. | State or suggest that the project is safe, compliant or approved. |
+| **FR1** | Accept a project description written in normal language and identify the responsible AI risk areas (privacy, fairness, transparency) that are relevant to it, based on the approved documents. | State or suggest that the project is safe, compliant or approved. |
 | **FR2** | Answer questions about what the approved guideline documents say. | Present information from outside the approved documents as if it came from them. |
-| **FR3** | Provide a source reference  for each risk or answer based on the documents. | Invent a source or cite a passage that was not retrieved. |
+| **FR3** | Provide a source reference for each risk or answer based on the documents. | Invent a source or cite a passage that was not retrieved. |
 | **FR4** | Produce a preliminary checklist from the project description, with each checklist item linked to a retrieved guideline passage. | Present the checklist as a complete risk assessment. |
 | **FR5** | Say clearly when the approved documents do not contain enough information to answer, and decline out-of-scope requests (such as certification, legal advice or unrelated topics) with a short redirect. | Guess an answer when there is not enough evidence. |
 | **FR6** | Give answers in clear, plain language suitable for undergraduate students. | - |

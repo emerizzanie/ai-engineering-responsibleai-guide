@@ -1,8 +1,10 @@
-# Pipeline Decisions: ResponsibleAI Guide (Week 3)
+# Week 3: Pipeline Decisions (ResponsibleAI Guide)
+
+[Back to README](../README.md) | Same week: [data inventory](week3_data_inventory.md) | Next: [Week 4 audit](week4_data_quality_audit.md)
 
 This file records what I chose for the V1 data pipeline, why, and what evidence supports it. The pipeline is the data side of the Week 2 architecture: it turns the approved guideline PDFs into text pieces with source details, so the "Knowledge source" and "Knowledge access" parts have something to work with.
 
-Notebook: `notebooks/week3_pipeline.ipynb` | Diagram: `docs/week3_pipeline_diagram.png`
+Notebook: [`week3_pipeline.ipynb`](../notebooks/week3_pipeline.ipynb) | Diagram: [`week3_pipeline_diagram.png`](week3_pipeline_diagram.png)
 
 ---
 
@@ -21,7 +23,7 @@ Notebook: `notebooks/week3_pipeline.ipynb` | Diagram: `docs/week3_pipeline_diagr
 | Source | S01: NIST AI 100-1, AI RMF 1.0 (`nist_ai_100-1_ai_rmf_1.0.pdf`) |
 | Size | 48 pages, 106,446 extracted characters, 0 near-empty pages |
 | Why S01 | Clean readable text, no near-empty pages, and only 48 pages (the same as S05, and fewer than the others). It is a good first document to test the pipeline on. |
-| Not in this run | S02, S04 and S05 use the same pathway and will be added later. S03 (Malaysia AIGE) is link only because of its copyright notice. |
+| Not in this run | S02 to S05 use the same pathway and will be added later. For S03 and S04 the permission question must be settled first (see section 10). |
 
 The lab code handles one document per run, so V1 runs S01 only. Adding the other PDFs later means repeating the same steps with a different file name.
 
@@ -91,16 +93,15 @@ Part C uses the same configuration as Part B, so the two prepared files should b
 
 Cell 9 runs the pipeline a second time and compares the source fingerprints, output fingerprints and source-to-output mapping. Timestamps are allowed to differ.
 
-Result: fill in after running Cell 9 in Colab (expected: `PASS: documents` and "All selected pipelines passed repeatability smoke checks.").
+Result: **PASS**. Cell 9 printed `PASS: documents — source fingerprints, prepared outputs and mappings match` and "All selected pipelines passed repeatability smoke checks." The output is saved in the notebook.
 
 This is a smoke test. It does not prove full reproducibility on another computer.
 
 ## 10. Provenance and Access Caveats
 
 - `source_version` and `access_rights` are recorded as **"Not verified"** in both manifests.
-- NIST says the document is free of charge, but the reuse terms are not checked yet. I will check them before committing any PDF.
-- Raw PDFs are not committed. Only the prepared text and the manifests are, and I will check the reuse terms before committing these too.
-- S03 stays link only.
+- **Update (Week 4):** I checked the rights statement inside each PDF during the data quality audit. NIST is free of charge, UNESCO is Open Access (CC-BY-SA 3.0 IGO), and the Malaysia AIGE and ASEAN PDFs say they may not be copied without permission.
+- The five raw PDFs are in `data/raw/` in this repo. Permission for S03 and S04 is still an open issue. See [section E of the Week 4 audit](week4_data_quality_audit.md#e-responsible-data-practices).
 
 ## 11. Traceability
 

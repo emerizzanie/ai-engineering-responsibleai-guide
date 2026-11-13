@@ -1,8 +1,10 @@
-# Evaluation Criteria: ResponsibleAI Guide
+# Week 2: Evaluation Criteria (ResponsibleAI Guide)
+
+[Back to README](../README.md) | Same week: [requirements](week2_requirements.md), [architecture decisions](week2_architecture_decisions.md)
 
 Version: 1.0
 
-In Part A, I wrote down what the system must do, how well it should perform, and what responsible behaviour it needs. This file explains **how I will check** if the most important requirements are met.
+In the [requirements file](week2_requirements.md), I wrote down what the system must do, how well it should perform, and what responsible behaviour it needs. This file explains **how I will check** if the most important requirements are met.
 
 I picked 7 requirements. Together they cover my three objectives:
 
