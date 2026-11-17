@@ -1,0 +1,13 @@
+# S03 and S04 are free to download but not openly licensed (no reproduction
+# without permission), so they stay on my laptop only. See data/data_sources.md.
+data/raw/malaysia_aige_2024.pdf
+data/raw/asean_ai_governance_ethics_2024.pdf
+
+# Local-only outputs for S03/S04 and the future vector index (they contain source text)
+data/local_only/
+chroma_db/
+
+# Secrets (LLM API key) and Python/Jupyter clutter
+.env
+__pycache__/
+.ipynb_checkpoints/

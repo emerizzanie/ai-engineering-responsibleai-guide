@@ -57,18 +57,24 @@ This is not enough for my project, because it has nothing to keep the answers ti
 | **D3: Use a hosted language model service** | Limited time, budget and laptop power (NFR4); one student working alone. | 1) Run a small model on my own laptop. 2) Use a hosted service. | Hosted language model service | Faster to build and likely better quality, but I depend on the provider, there may be costs, and student text leaves my computer. This is why D2 includes a privacy warning. |
 | **D4: Add an output check after the model** | Citations must be real (RAI1), a notice must always show (RAI2), and uncovered questions must get "not enough information" (RAI3). | 1) Trust the model's output. 2) Check the output before showing it. | Output check | Some extra processing and the risk of blocking a good answer, but it protects against made-up sources and missing notices. |
 
+> **Update (proposal, Nov 2026):** D5 to D8 choose the actual techniques (embedding model, vector store, top-k, citation method and hosted LLM). They are in [proposal design, section 2](proposal_design.md#2-technique-choices).
+
 ---
 
 ## 5. Initial Requirements Traceability Matrix
 
 | Objective | Requirement | Evaluation Criterion | Architecture Element | Later Evidence |
 |---|---|---|---|---|
-| O1 | FR2 / NFR3 | Retrieval relevance | Knowledge source + Knowledge access | Hit rate on the 30-question set |
+| O1 | FR2 / NFR5 | Knowledge base coverage and quality *(added for the proposal)* | Knowledge source (data pipeline) | Rule 1 and Rule 2 results and manifest check for each prepared source |
+| O3 | FR2 / NFR3 | Retrieval relevance | Knowledge source + Knowledge access | Hit rate on the 30-question set |
 | O2 | FR3 / RAI1 | Source citation and support | Knowledge access (source tracking) + Output check | Citation presence and match results |
+| O2 | FR4 / RAI1 | Checklist relevance and linking *(added for the proposal)* | Language model service + Output check | Results on 3 to 5 sample project descriptions |
 | O2 | FR5 / RAI3 | Handling questions the documents do not cover | Output check + Language model service rules | Results on 10 uncovered questions |
 | O2 | FR1 / RAI2 / RAI4 | Out-of-scope refusal and notice | Scope & privacy control + Output check | Results on 20 out-of-scope requests, privacy test cases |
 | O3 | NFR2 | Answer correctness and improvement over a plain LLM | Evaluation point + Language model service | RAG score vs baseline score |
 | O3 | NFR1 | Response time | Whole pipeline, measured at the Evaluation point | p90 latency from the test run |
+
+> **Update (proposal, Nov 2026):** The first row said O1 for retrieval relevance. This was a mistake: my O3 is the objective that evaluates retrieval relevance, and the [evaluation criteria](week2_evaluation_criteria.md) already used O3. I fixed it, and added two rows so that O1 and FR4 are also evaluated. The full updated matrix, with the V2 components, is in [proposal design, section 7](proposal_design.md#7-updated-traceability-matrix).
 
 ---
 

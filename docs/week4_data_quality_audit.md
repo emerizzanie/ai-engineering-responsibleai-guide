@@ -90,6 +90,8 @@ Evidence: notebook Cell 7 and the two manifests.
 2. Until that is settled, do not commit prepared chunks from S03 or S04.
 3. Replace "Not verified" in the manifest with the real version, access date and rights.
 
+> **Update after the audit (17 Nov 2026):** I took action 1 one step further. S03 and S04 are no longer kept in the public repo. They are listed in `.gitignore` and kept on my laptop and Google Drive, and their chunks will be made locally only. I will still confirm this with my lecturer. See [proposal design, section 6](proposal_design.md#6-responsible-data-decision-for-s03-and-s04).
+
 **Data governance statement.** My project uses public guideline documents, and every prepared chunk can be traced to its source file, fingerprint and page. I did not find private personal data in the chunks. The main gap is permission: S03 and S04 do not allow copying without permission, and copies are in my public repo. I will confirm this with my lecturer, remove the files if needed, and record the version, access date and rights of every source before more documents are prepared.
 
 ## F. Engineering Decision

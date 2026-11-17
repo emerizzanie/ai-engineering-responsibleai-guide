@@ -102,6 +102,7 @@ This is a smoke test. It does not prove full reproducibility on another computer
 - `source_version` and `access_rights` are recorded as **"Not verified"** in both manifests.
 - **Update (Week 4):** I checked the rights statement inside each PDF during the data quality audit. NIST is free of charge, UNESCO is Open Access (CC-BY-SA 3.0 IGO), and the Malaysia AIGE and ASEAN PDFs say they may not be copied without permission.
 - The five raw PDFs are in `data/raw/` in this repo. Permission for S03 and S04 is still an open issue. See [section E of the Week 4 audit](week4_data_quality_audit.md#e-responsible-data-practices).
+- **Update (17 Nov 2026):** S03 and S04 were removed from the public repo and are kept locally only. See [proposal design, section 6](proposal_design.md#6-responsible-data-decision-for-s03-and-s04).
 
 ## 11. Traceability
 

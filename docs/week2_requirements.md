@@ -42,7 +42,7 @@
 | **NFR1** | Performance | The system shall respond within a reasonable time for interactive use. | Measure end-to-end response time on a defined set of test queries. | p90 latency | < 10,000 ms |
 | **NFR2** | Correctness | Answers shall agree with the approved source documents. | Score answers on a manually checked set of about 30 questions using a simple rubric. | Correct response rate (%) | ≥ 80% |
 | **NFR3** | Retrieval quality | The system shall retrieve at least one relevant passage for each supported question. | Run the checked question set and record whether a relevant passage appears in the top 5 retrieved results. | Hit rate at top 5 (%) | ≥ 80% |
-| **NFR4** | Cost | Running costs shall stay within a student project budget. | Record LLM/API usage over the evaluation workload. | Cost per 100 queries | < RM10.00 (estimate, to be updated after the LLM is chosen) |
+| **NFR4** | Cost | Running costs shall stay within a student project budget. | Log the token counts the LLM API returns over the evaluation workload, then multiply by the paid-tier price of the chosen LLM (method in [proposal design, section 5](proposal_design.md#5-evaluation-additions)). | Cost per 100 queries | < RM10.00 (a safe upper limit for now; to be tightened after the first measured run) |
 | **NFR5** | Maintainability | A new or updated guideline document shall be added without rebuilding unrelated parts of the system. | Run a document-update test: add one new document and rebuild only what is needed. | Time to add one document | < 15 minutes |
 
 ---

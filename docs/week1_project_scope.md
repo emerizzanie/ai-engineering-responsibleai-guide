@@ -46,7 +46,11 @@ Source: https://arxiv.org/abs/2412.07620
 In 2023, UNESCO reported that fewer than 10% of the 450+ schools and universities in its survey had policies or formal guidance on using generative AI.
 Source: https://www.unesco.org/en/articles/unesco-governments-must-quickly-regulate-generative-ai-schools
 
-**Limitation of this evidence:** These sources are about industry practitioners and institutions, not about students directly.
+**Evidence 4: Ethics is often left to the end of technical AI courses** *(added for the proposal)*
+Garrett, Beard and Fiesler (2020) studied 20 technical AI/ML courses from 12 US universities. Most of them covered ethics topics only in the last two classes, and one course listed ethics as a discussion topic only "if time allows". They also point to an earlier study that found only 12% of nearly 200 AI, ML and data science courses mentioned an ethics topic.
+Source: https://doi.org/10.1145/3375627.3375868
+
+**Limitation of this evidence:** Evidence 1 to 3 are about industry practitioners and institutions, not about students directly. Evidence 4 is about what university students are taught, which is closer to my users, but it is from the US and not from Malaysia.
 
 ---
 

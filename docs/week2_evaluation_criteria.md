@@ -6,7 +6,7 @@ Version: 1.0
 
 In the [requirements file](week2_requirements.md), I wrote down what the system must do, how well it should perform, and what responsible behaviour it needs. This file explains **how I will check** if the most important requirements are met.
 
-I picked 7 requirements. Together they cover my three objectives:
+In Week 2 I picked 7 criteria. For the proposal I added 2 more (marked *added for the proposal*), because O1 and the checklist (FR4) had no criterion. The 9 criteria now cover all three objectives:
 
 - **O1:** Collect and organise the public responsible AI documents
 - **O2:** Build the RAG assistant (risk explanations, sources, checklist)
@@ -25,16 +25,18 @@ I picked 7 requirements. Together they cover my three objectives:
 | O2 / FR1 / RAI2 | Out-of-scope refusal and notice | Instruction-following capability | Send at least 20 out-of-scope requests (for example "approve my project" or "is this legal?") and check every checklist output for the "preliminary guidance only" notice. | Refusal-and-redirect success rate; notice presence rate | ≥ 90% refusal-and-redirect; 100% notice | Students do not treat the tool as an approval or as legal advice. |
 | O3 / NFR1 | Response time | Cost and latency | Measure end-to-end response time over the same test queries. | p90 latency | < 10,000 ms | Students get an answer without waiting too long. |
 | O3 / NFR2 | Improvement over a plain LLM | Domain-specific capability | Run the same question set on a plain LLM without document retrieval and compare its score with the RAG system. | Difference in correct response rate (percentage points) | RAG higher by ≥ 10 points | Shows that using the documents really helps and is worth the extra work. |
+| O1 / FR2 / NFR5 | Knowledge base coverage and quality *(added for the proposal)* | Domain-specific capability | Run the data pipeline and the Week 4 Rule 1 and Rule 2 on every prepared source, then check the manifest. | Required sources prepared (S01 to S04); Rule 1 and Rule 2 pass rates; manifest fields still "Not verified" | 4 of 4; 100%; 100% after human review; 0 | The assistant can answer general **and** Malaysian/ASEAN questions with sources that can be traced. |
+| O2 / FR4 / RAI1 | Checklist relevance and linking *(added for the proposal)* | Generation capability | Run the 3 to 5 sample project descriptions. For each checklist item, judge "relevant to this project: yes/no" and check that it cites a retrieved chunk. | % of items relevant; % of items linked to a retrieved chunk | ≥ 80% relevant; 100% linked | Students get a checklist that fits their own project, not a generic list. |
 
 ---
 
 ## Notes
 
 - **Correctness rule:** An answer is "correct" only if its main point matches the source document. I will mark it "wrong" if it adds something that is not in the sources, even if it sounds reasonable.
-- **Test sets I need to prepare later:** about 30 questions with reference answers, 10 questions the documents do not cover, 20 out-of-scope requests, and 3 to 5 sample project descriptions (for example a student FAQ chatbot or an image classifier) for checking the checklist.
+- **Test sets I need to prepare later:** about 30 questions with reference answers, 10 questions the documents do not cover, 20 out-of-scope requests, and 3 to 5 sample project descriptions (for example a student FAQ chatbot or an image classifier) for checking the checklist. Examples of each set are in [`evaluation/test_set_examples.md`](../evaluation/test_set_examples.md).
 - **Thresholds are first guesses.** I may change them after the first test run if they turn out to be unrealistic. The 10-point improvement over the plain LLM is also a starting target, not a fixed number.
 - **Human judgement:** Citation match and correctness need me to read the answers myself. To reduce bias, I will write the reference answers before looking at the system's output.
-- **Not covered here:** Privacy (RAI4), cost (NFR4) and maintainability (NFR5) are in the requirements file but I did not pick them for this table. I will test them in a later week.
+- **Not in this table:** Privacy (RAI4), cost (NFR4) and maintainability (NFR5) are in the requirements file. How each one will be tested is in [proposal design, section 5](proposal_design.md#5-evaluation-additions).
 
 ---
 

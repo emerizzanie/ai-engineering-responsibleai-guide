@@ -37,6 +37,7 @@ The numbers below come from my Colab inspection cell (Cell A3) using `pypdf`. A 
 ## 3. Storage: Raw vs Prepared
 
 - **Raw PDFs:** kept in `data/raw/` in this repo, with copies in Google Drive and on my own computer. The permission for S03 and S04 is an open issue (see the table above).
+  - *Update (17 Nov 2026):* S03 and S04 are now kept on my computer and Google Drive only, not in the public repo. See [proposal design, section 6](proposal_design.md#6-responsible-data-decision-for-s03-and-s04).
 - **Prepared data:** saved under `data/processed/` and `data/pipeline_v1/documents/`, with the manifest in [`data/week3_manifest.json`](../data/week3_manifest.json).
 
 ## 4. Observations and Limitations
